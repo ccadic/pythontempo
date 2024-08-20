@@ -4,3 +4,5 @@ Librairie python pour permettre de récupérer la couleur du tarif tempo, basée
 Fonctionne avec python 3.1x
 
 Pensez à installer: pip install requests
+
+<img src="https://github.com/ccadic/pythontempo/blob/main/tempolib.jpg">
