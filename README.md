@@ -16,8 +16,11 @@ Vérification des heures creuses : La fonction is_in_heures_creuses vérifie si 
 **Contrôle des prises Shelly :**
 
 Couleur Tempo : Le script appelle getTempoToday() pour obtenir la couleur Tempo du jour.
+
 Heures creuses : Le script vérifie si l'heure actuelle se situe dans la plage des heures creuses.
+
 Allumage ou extinction des prises : Si la période est BLEU et que l'heure est dans les heures creuses, les prises sont allumées. Sinon, elles sont éteintes. Le script affiche un message pour chaque action effectuée.
+
 Exécution du script : Lorsque le script est exécuté, il utilise la classe TempoAPI de votre librairie pour effectuer les actions nécessaires en fonction de la couleur Tempo et de l'heure actuelle.
 
 **Exemple de sortie possible**
