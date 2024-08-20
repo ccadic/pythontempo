@@ -36,3 +36,33 @@ class TempoAPI:
     def getTempoTomorrow(self):
         """Retourne la couleur du jour Tempo pour demain."""
         return self.get_tempo_data("tomorrow")
+
+    def shellPlugOn(self, ip_address):
+        """Allume la prise Shelly Plug S à l'adresse IP spécifiée."""
+        url = f"http://{ip_address}/relay/0/on"
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Vérifie si la requête a réussi
+            if response.status_code == 200:
+                print(f"Prise à {ip_address} allumée.")
+            else:
+                print(f"Impossible d'allumer la prise à {ip_address}.")
+        except requests.exceptions.HTTPError as http_err:
+            print(f"Erreur HTTP : {http_err}")
+        except Exception as err:
+            print(f"Erreur : {err}")
+
+    def shellPlugOff(self, ip_address):
+        """Éteint la prise Shelly Plug S à l'adresse IP spécifiée."""
+        url = f"http://{ip_address}/relay/0/off"
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Vérifie si la requête a réussi
+            if response.status_code == 200:
+                print(f"Prise à {ip_address} éteinte.")
+            else:
+                print(f"Impossible d'éteindre la prise à {ip_address}.")
+        except requests.exceptions.HTTPError as http_err:
+            print(f"Erreur HTTP : {http_err}")
+        except Exception as err:
+            print(f"Erreur : {err}")
